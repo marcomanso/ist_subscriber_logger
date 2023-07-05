@@ -25,7 +25,28 @@ log_file_location = None
 #global variable to indicate IDs of receivers
 destinationsID = None
 
+## utils
 
+def to_unix_time_millis(timestr):
+  dt = None
+  try:  # assume isoformat first
+    dt = datetime.strptime(timestr, "%Y-%m-%dT%H:%M:%S.%f%z")
+  except:
+    try:  # if not, assume epoch seconds
+      dt = datetime.fromtimestamp(float(timestr))
+    except:
+      try:  # if not, assume epoch milliseconds
+        dt = datetime.fromtimestamp(float(timestr) / 1000.0)
+      except:
+        pass
+
+  try:  # if dt=1/1/1970, timestamp throws an exception
+    return dt.timestamp() * 1000.0
+  except:
+    return 0
+
+
+##
 
 def read_parameters(args):
   global mqtt_data
@@ -106,7 +127,8 @@ def write_log(msg_JSON, topic):
           "loggingSystemID": node_data['node_id'],
           "loggingEventType": "sent" if topic.startswith(local_COUNTRY+"/") else "received",
           "messageID": message_id,
-          "timestamp": timestamp,
+          "timestamp": str(to_unix_time_millis(timestamp)),
+          "timestamp_ISO": timestamp,
           "sourceSystemID": msg_country,
           "destinationSystemIDs": msg_destinationSystemIDs,
           "positions": [
@@ -129,7 +151,8 @@ def write_log(msg_JSON, topic):
         "loggingSystemID": node_data['node_id'],
         "loggingEventType": "sent" if topic.startswith(local_COUNTRY+"/") else "received",
         "messageID": message_id,
-        "timestamp": timestamp,
+        "timestamp": str(to_unix_time_millis(timestamp)),
+        "timestamp_ISO": timestamp,
         "sourceSystemID": msg_country,
         "destinationSystemIDs": msg_destinationSystemIDs,
         "subject": topic,
