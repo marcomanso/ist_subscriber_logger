@@ -195,8 +195,10 @@ def on_subscribe(client, userdata, mid, granted_qos):
     
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-  write_log(json.loads(msg.payload), msg.topic)
-  
+  try:
+    write_log(json.loads(msg.payload), msg.topic)
+  except:
+    print("-- error trying json from message", msg.payload)
 
 ##########
 ## MAIN 
