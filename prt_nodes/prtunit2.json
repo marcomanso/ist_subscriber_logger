@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "PRT",
+  "ORGANISATION":  "PARTICLE",
+  "node_id":  "PRT-S002",
+  "assetType": "soldier",
+  "assetName": "Bartolomeu",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

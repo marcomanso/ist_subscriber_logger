@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "PRT",
+  "ORGANISATION":  "PARTICLE",
+  "node_id":  "PRT-S008",
+  "assetType": "soldier",
+  "assetName": "Mariza",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

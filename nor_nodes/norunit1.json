@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S001",
+  "assetType": "soldier",
+  "assetName": "Astrid",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

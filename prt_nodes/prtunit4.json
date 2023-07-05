@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "PRT",
+  "ORGANISATION":  "PARTICLE",
+  "node_id":  "PRT-S004",
+  "assetType": "soldier",
+  "assetName": "Magalhaes",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCVS--"
+}

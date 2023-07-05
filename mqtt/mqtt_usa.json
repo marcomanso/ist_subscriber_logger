@@ -1,0 +1,6 @@
+{
+  "mqtt_ip":"134.209.191.52",
+  "mqtt_port":1883,
+  "mqtt_keepalive": 60,
+  "coalition":"IST150"
+}

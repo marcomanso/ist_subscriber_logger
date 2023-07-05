@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S006",
+  "assetType": "soldier",
+  "assetName": "Frigg",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

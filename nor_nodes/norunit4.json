@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S004",
+  "assetType": "soldier",
+  "assetName": "Solveig",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

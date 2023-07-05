@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S008",
+  "assetType": "soldier",
+  "assetName": "Gunhild",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

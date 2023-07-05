@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "PRT",
+  "ORGANISATION":  "PARTICLE",
+  "node_id":  "PRT-S003",
+  "assetType": "soldier",
+  "assetName": "Gama",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

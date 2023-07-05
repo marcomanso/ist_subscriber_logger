@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S005",
+  "assetType": "soldier",
+  "assetName": "Sigfrid",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

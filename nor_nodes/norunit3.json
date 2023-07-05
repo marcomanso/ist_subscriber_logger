@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S003",
+  "assetType": "soldier",
+  "assetName": "Ingrid",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

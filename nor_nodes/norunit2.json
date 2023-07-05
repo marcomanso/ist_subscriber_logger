@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S002",
+  "assetType": "soldier",
+  "assetName": "Freya",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

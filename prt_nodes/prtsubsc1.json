@@ -1,0 +1,10 @@
+{
+  "node_id":"PARTICLE-sub1",
+  "topics": [
+    "PRT/PARTICLE/#",
+    "NOR/FFI/#",
+    "DEU/#",
+    "POL/#",
+    "SGP/#"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "PRT",
+  "ORGANISATION":  "PARTICLE",
+  "node_id":  "PRT-S005",
+  "assetType": "soldier",
+  "assetName": "Camoes",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}

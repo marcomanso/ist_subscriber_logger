@@ -1,0 +1,5 @@
+{
+  "mqtt_ip":"51.15.61.122",
+  "mqtt_port":18830,
+  "mqtt_keepalive": 60
+}

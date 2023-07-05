@@ -1,0 +1,9 @@
+{
+  "COUNTRY":  "NOR",
+  "ORGANISATION":  "FFI",
+  "node_id":  "NOR-S007",
+  "assetType": "soldier",
+  "assetName": "Sif",
+  "functions": ["info", "location"],
+  "symbolCode": "SFGPUCA---"
+}
