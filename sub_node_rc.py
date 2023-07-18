@@ -119,7 +119,8 @@ def write_log(msg_JSON, topic):
 
   msg_country = topic[0:3]
   msg_destinationSystemIDs = ['DEU', 'PRT', 'SGP', 'USA', 'NOR', 'POL']
-  msg_destinationSystemIDs.remove(msg_country)
+  if(msg_country != 'SIE'):
+    msg_destinationSystemIDs.remove(msg_country)
 
   if "/location" in topic :
     logMessageLog_JSON = {
@@ -128,13 +129,14 @@ def write_log(msg_JSON, topic):
           "loggingEventType": "sent" if topic.startswith(local_COUNTRY+"/") else "received",
           "messageID": message_id,
           "timestamp": str(to_unix_time_millis(timestamp)),
-          "timestamp_ISO": timestamp,
+          "timestamp_ISO": timestamp, # when this message is generated
           "sourceSystemID": msg_country,
           "destinationSystemIDs": msg_destinationSystemIDs,
           "positions": [
             {
               "systemID":  sourceSystemID,
-              "timestamp": sourceTimestamp,
+              "timestamp":  str(to_unix_time_millis(sourceTimestamp)), # when the position message was generated
+              "timestamp_ISO": sourceTimestamp, # when the position message was generated
               "latitude":  coordinates[0],
               "longitude": coordinates[1]
              # "altitude":  coordinates[2]
@@ -197,8 +199,10 @@ def on_subscribe(client, userdata, mid, granted_qos):
 def on_message(client, userdata, msg):
   try:
     write_log(json.loads(msg.payload), msg.topic)
-  except:
+  except Exception as e:
     print("-- error trying json from message", msg.payload)
+    print("   -- topic was:", msg.topic)
+    print("   -- error was:", e)
 
 ##########
 ## MAIN 
@@ -240,6 +244,11 @@ client.on_connect = on_connect
 client.connect(mqtt_data['mqtt_ip'],mqtt_data['mqtt_port'],mqtt_data['mqtt_keepalive'])
 client.on_subscribe = on_subscribe
 client.on_message = on_message
+try:
+  print ("logging in as user " + mqtt_data['mqtt_username'])
+  client.username_pw_set(username=mqtt_data['mqtt_username'], password=mqtt_data['mqtt_password'])
+except:
+  print ("logging in without credentials")
 
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
