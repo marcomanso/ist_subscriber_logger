@@ -1,8 +1,11 @@
 {
+  "node_id":"NOR-sub1",
+  "topics": [
     "PRT/PARTICLE/#",
     "NOR/FFI/#",
     "DEU/#",
     "SIERRA/#",
     "USA/#",
-    "POL/#",
+    "POL/#"
+  ]
 }

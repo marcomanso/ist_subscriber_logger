@@ -14,6 +14,5 @@ sub_node_rc.py: error: the following arguments are required: --country, --node, 
 
 ## Example
 
-> python sub_node_rc.py --country PRT --node prt_nodes\prtsubsc1.json --mqtt mqtt\mqtt_prt.json --log log\2
-0230705_test.log
+> python sub_node_rc.py --country PRT --node prt_nodes\prtsubsc1.json --mqtt mqtt\mqtt_prt.json --log log\20230705_test.log
 
