@@ -1,11 +1,10 @@
 {
   "node_id":"PARTICLE-sub1",
   "topics": [
-    "PRT/PARTICLE/#",
-    "NOR/FFI/#",
-    "DEU/FKIE/#",
-    "SIERRA/#",
-    "USA/#",
-    "POL/#"
+	"PRT/PARTICLE/soldier/#",
+	"DEU/FKIE/#",
+	"NOR/FFI/soldier/#",
+	"USA/DVPG/tower/#",
+	"POL/MUT/transportation/#"
   ]
 }
