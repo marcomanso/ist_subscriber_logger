@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 def get_filename_array(filename):
-    return filename+"_array"
+    return filename+"_dummytoremove"
 
 
 ## utils
@@ -31,24 +31,32 @@ def to_unix_time_millis(timestr):
   try:  # if dt=1/1/1970, timestamp throws an exception
     return round(dt.timestamp() * 1000.0) # round because analyzer expects a "long" here
   except:
-    return 0
+    return None
 
 
 def get_valid_data(data):
 
     try:
-        #only store positionMessageLog
-        if ("positionMessageLog" not in data):
-            return None;
+        data_content = None
+        if ("textMessageLog" in data):
+            data_content = data.get("textMessageLog")
+        elif ("positionMessageLog" in data):
+            data_content = data.get("positionMessageLog")
+        else:
+            return None
+
+        #exclude info
+        if ("subject" in data_content and data_content["subject"].endswith("/info")):
+            return None
 
         #need to fix time?
-        if (data["positionMessageLog"]["timestamp_ISO"] is not None
-            and data["positionMessageLog"]["timestamp"] is None):
-            data["positionMessageLog"]["timestamp"] = to_unix_time_millis(data["positionMessageLog"]["timestamp_ISO"])
-        if (data["positionMessageLog"]["messageID"] is None
-            or data["positionMessageLog"]["timestamp_ISO"] is None
-            or data["positionMessageLog"]["timestamp"] is None):
-            return None;
+        #if (data_content["timestamp_ISO"] is not None and data_content["timestamp"] is None):
+        if (data_content["timestamp_ISO"] is not None):
+                data_content["timestamp"] = to_unix_time_millis(data_content["timestamp_ISO"])
+
+        # check if valid
+        if (data_content["messageID"] is None or data_content["timestamp_ISO"] is None or data_content["timestamp"] is None):
+            return None
         else:
             return data
     except Exception as err:
