@@ -1,0 +1,70 @@
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230824_high-track1_USA.log_fixed,,,
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230824_high-track1_USA.log_fixed,,,
+done!,,,
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230824_high-track1_USA.log_fixed,,,
+Logging system: USA-sub1,,,
+-- first time: 2023-08-24T15:09:59.649904+00:00,,,
+-- sent:,,,
+USA,7848,7848,
+None,,,
+-- received:,,,
+DEU,4937,4369,-11.50%
+NOR,2223,2223,0.00%
+POL,7061,7061,0.00%
+PRT,2274,2274,0.00%
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230824_hightrack1_nor.log_fixed,,,
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230824_hightrack1_nor.log_fixed,,,
+done!,,,
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230824_hightrack1_nor.log_fixed,,,
+Logging system: NOR-sub1,,,
+-- first time: 2023-08-24T15:10:41.454057+00:00,,,
+-- sent:,,,
+NOR,2223,2223,
+None,,,
+-- received:,,,
+DEU,4611,4369,-5.25%
+POL,7061,7061,0.00%
+PRT,2274,2274,0.00%
+USA,7848,7848,0.00%
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230823_hightrack1_prt.log_fixed,,,
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230823_hightrack1_prt.log_fixed,,,
+done!,,,
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/20230823_hightrack1_prt.log_fixed,,,
+Logging system: PARTICLE-sub1,,,
+-- first time: 2023-08-24T15:10:27.176579+00:00,,,
+-- sent:,,,
+PRT,2274,2274,
+None,,,
+-- received:,,,
+DEU,4663,4369,-6.30%
+NOR,2204,2223,0.86%
+POL,7061,7061,0.00%
+USA,7848,7848,0.00%
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/log_deu_baseline01_24_08.log_fixed,,,
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/log_deu_baseline01_24_08.log_fixed,,,
+done!,,,
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/log_deu_baseline01_24_08.log_fixed,,,
+Logging system: FKIE-sub1,,,
+-- first time: 2023-08-24T15:11:05.368490+00:00,,,
+-- sent:,,,
+DEU,4369,4369,
+None,,,
+-- received:,,,
+NOR,2181,2223,1.93%
+POL,7061,7061,0.00%
+PRT,2260,2274,0.62%
+USA,7848,7848,0.00%
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/log_pol_baseline01_24_08.log_fixed,,,
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/log_pol_baseline01_24_08.log_fixed,,,
+done!,,,
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/EXPERIMENT_LOGS/log_fixed/hightrack1/log_pol_baseline01_24_08.log_fixed,,,
+Logging system: POL-sub1,,,
+-- first time: 2023-08-24T15:11:06.398308+00:00,,,
+-- sent:,,,
+POL,7061,7061,
+None,,,
+-- received:,,,
+DEU,4369,4369,0.00%
+NOR,2183,2223,1.83%
+PRT,2262,2274,0.53%
+USA,7848,7848,0.00%

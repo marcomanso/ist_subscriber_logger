@@ -1,0 +1,28 @@
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/20230824_check/20230818_high-frequency1_USA.log_dummytoremove
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/20230824_check/20230818_high-frequency1_USA.log_dummytoremove
+done!
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/20230824_check/20230818_high-frequency1_USA.log_dummytoremove
+Logging system: USA-sub1
+-- first time: 2023-08-18T16:14:36.437576+00:00
+-- sent:
+USA	324207
+None
+-- received:
+DEU	3897
+NOR	2095
+POL	3033
+PRT	4235
+--process /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/20230824_check/20230818_high-frequency1_USA.log_fix
+Processing log  /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/20230824_check/20230818_high-frequency1_USA.log_fix
+done!
+Log file: /mnt/c/Users/Marco/Downloads/EXPERIMENT_LOGS/20230824_check/20230818_high-frequency1_USA.log_fix
+Logging system: USA-sub1
+-- first time: 2023-08-18T16:14:36.548938+00:00
+-- sent:
+USA	317404
+None
+-- received:
+DEU	3885
+NOR	2080
+POL	1500
+PRT	4206

@@ -1,3 +1,8 @@
+# TODO:
+# 1. remove POL tracks
+# 2. also fix timestamp inside position etc.
+
+
 import argparse
 import json
 import dirtyjson
@@ -13,24 +18,36 @@ def get_filename_array(filename):
     return filename+"_dummytoremove"
 
 
+def get_filename_array_no_pol(filename):
+    return filename+"_nopol"
+
+
 ## utils
 
 def to_unix_time_millis(timestr):
-  dt = None
-  try:  # assume isoformat first
-    dt = datetime.strptime(timestr, "%Y-%m-%dT%H:%M:%S.%f%z")
-  except:
-    try:  # if not, assume epoch seconds
-      dt = datetime.fromtimestamp(float(timestr))
+    dt = None
+    try:  # assume isoformat first
+        #return datetime.fromisoformat(timestr)
+        dt = datetime.strptime(timestr, "%Y-%m-%dT%H:%M:%S.%f%z")
     except:
-      try:  # if not, assume epoch milliseconds
-        dt = datetime.fromtimestamp(float(timestr) / 1000.0)
-      except:
         pass
 
-  try:  # if dt=1/1/1970, timestamp throws an exception
-    return round(dt.timestamp() * 1000.0) # round because analyzer expects a "long" here
-  except:
+    try:  # if not, assume epoch seconds
+        dt = datetime.fromtimestamp(float(timestr))
+    except:
+        pass
+
+    try:  # if not, assume epoch milliseconds
+        dt = datetime.fromtimestamp(float(timestr) / 1000.0)
+    except:
+       pass
+
+    try:  # if dt=1/1/1970, timestamp throws an exception
+        return round(dt.timestamp() * 1000.0) # round because analyzer expects a "long" here
+    except:
+        pass
+
+    # give up
     return None
 
 
@@ -52,7 +69,7 @@ def get_valid_data(data):
         #need to fix time?
         #if (data_content["timestamp_ISO"] is not None and data_content["timestamp"] is None):
         if (data_content["timestamp_ISO"] is not None):
-                data_content["timestamp"] = to_unix_time_millis(data_content["timestamp_ISO"])
+            data_content["timestamp"] = to_unix_time_millis(data_content["timestamp_ISO"])
 
         # check if valid
         if (data_content["messageID"] is None or data_content["timestamp_ISO"] is None or data_content["timestamp"] is None):
@@ -97,18 +114,7 @@ data_as_array.close()
 print ("Processing post-log ", get_filename_array(input_file))
 json_data_array=[]
 with open(get_filename_array(input_file)) as data:
-
-    #logging.debug(data)
-
-    #json_data = demjson3.decode(data)
-    #logging.debug(json_data)
-
     json_data_array = dirtyjson.load(data)
-    #logging.debug(json_data)
-
-    #node_data = json.load(data)
-    #logging.debug(json.dumps(node_data, indent=2))
-
 print("-- got # records: "+str(len(json_data_array)))
 
 # filter only valid data
@@ -128,5 +134,25 @@ print ("Writing to ",output_file, end="")
 data_output = open(output_file, "w")
 data_output.write(json.dumps(json_data_valid_array))
 data_output.close()
+
+# save no POL
+outputfile_nopol=open(get_filename_array_no_pol(output_file), 'w')
+print ("Writing to ",get_filename_array_no_pol(output_file), end="")
+json_data_valid_array_nopol=[]
+for data in json_data_valid_array:
+    data_content=None
+    if ("textMessageLog" in data):
+        data_content = data.get("textMessageLog")
+    elif ("positionMessageLog" in data):
+        data_content = data.get("positionMessageLog")
+    if data_content is not None:
+        if "sourceSystemID" in data_content and data_content["sourceSystemID"]!="POL":
+            print("+",end="")
+            json_data_valid_array_nopol.append(data_content)
+        else:
+            print("-",end="")
+
+outputfile_nopol.write(json.dumps(json_data_valid_array_nopol))
+outputfile_nopol.close()
 
 print (".. done.  Bye !")
